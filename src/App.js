@@ -19,10 +19,21 @@ function App() {
   const getDateSum = () => {
     const data = date.split("-");
 
-    const sum = parseInt(data[0]) + parseInt(data[1]) + parseInt(data[2]);
-
+    //console.log(Object.assign([], data[1]));
+    const YearArr = Object.assign([], data[0]);
+    const YearArrTotal =
+      parseInt(YearArr[0]) +
+      parseInt(YearArr[1]) +
+      parseInt(YearArr[2]) +
+      parseInt(YearArr[3]);
+    const monthArr = Object.assign([], data[1]);
+    const monthArrTotal = parseInt(monthArr[0]) + parseInt(monthArr[1]);
+    const dateArr = Object.assign([], data[2]);
+    const dateArrTotal = parseInt(dateArr[0]) + parseInt(dateArr[1]);
+    const sum = YearArrTotal + monthArrTotal + dateArrTotal;
     return sum;
   };
+
   return (
     <div className="App">
       <h1>Is your birthday lucky number?</h1>
